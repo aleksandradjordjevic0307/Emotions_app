@@ -84,7 +84,7 @@ public class Broker {
       public void update(AbstractDomainObject ado) throws SQLException {
         String upit = "UPDATE " + ado.nazivTabele() + " SET "
                 + ado.vrednostiZaUpdate() + " WHERE " + ado.uslovWhere();
-        System.out.println(upit);
+        System.out.println("Upit za update: " + upit);
         Statement s = connection.createStatement();
         s.executeUpdate(upit);
     }

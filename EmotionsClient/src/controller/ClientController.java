@@ -70,6 +70,7 @@ public class ClientController {
     
     public void updateUser(User user) throws Exception{
         System.out.println("Stigao u client controller i treba da posalje zahtev za update korisnika");
+        System.out.println("Novi username: " + user.getNoviUsername() + ", stari username: " + user.getUsername());
         sendRequest(Operation.SO_UPDATE_USER, user);
     }
     public void deleteUser(User user) throws Exception{

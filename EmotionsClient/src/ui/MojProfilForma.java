@@ -46,6 +46,8 @@ public class MojProfilForma extends javax.swing.JFrame {
         password_txt_fld = new javax.swing.JTextField();
         change_data_btn = new javax.swing.JButton();
         save_btn = new javax.swing.JButton();
+        back_btn = new javax.swing.JButton();
+        delete_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +82,21 @@ public class MojProfilForma extends javax.swing.JFrame {
             }
         });
 
+        back_btn.setText("Nazad");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
+        delete_btn.setBackground(new java.awt.Color(255, 204, 204));
+        delete_btn.setText("Obrisi profil");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,21 +104,27 @@ public class MojProfilForma extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(podaci_lbl)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(username_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(username_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(change_data_btn)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                        .addComponent(delete_btn)
+                        .addGap(39, 39, 39)
+                        .addComponent(back_btn))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(password_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(podaci_lbl)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(change_data_btn)
-                                .addGap(59, 59, 59)
-                                .addComponent(save_btn))
-                            .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                                .addComponent(username_lbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(username_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(password_lbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,10 +139,12 @@ public class MojProfilForma extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password_lbl)
                     .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(change_data_btn)
-                    .addComponent(save_btn))
+                    .addComponent(save_btn)
+                    .addComponent(back_btn)
+                    .addComponent(delete_btn))
                 .addGap(15, 15, 15))
         );
 
@@ -153,7 +178,7 @@ public class MojProfilForma extends javax.swing.JFrame {
         // TODO add your handling code here:
         User u = sesija.Session.getInstance().getUlogovani();
         
-        String noviUsername = username_txt_fld.getText().trim();
+        String noviUsername = username_txt_fld.getText();
         String noviPassword = password_txt_fld.getText();
         u.setNoviUsername(noviUsername);
         u.setNoviPassword(noviPassword);
@@ -167,10 +192,26 @@ public class MojProfilForma extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_save_btnActionPerformed
 
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        MeniAplikacije meni = new MeniAplikacije();
+        meni.setVisible(true);
+    }//GEN-LAST:event_back_btnActionPerformed
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(this, "Da li ste sigurni da zelite da obrisete svoj profil?");
+        
+        
+    }//GEN-LAST:event_delete_btnActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_btn;
     private javax.swing.JButton change_data_btn;
+    private javax.swing.JButton delete_btn;
     private javax.swing.JLabel password_lbl;
     private javax.swing.JTextField password_txt_fld;
     private javax.swing.JLabel podaci_lbl;

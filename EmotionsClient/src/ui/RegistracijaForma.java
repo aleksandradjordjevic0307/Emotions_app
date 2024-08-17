@@ -122,8 +122,10 @@ public class RegistracijaForma extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Uspesno ste kreirali profil");
             sesija.Session.getInstance().setUlogovani(u);
             this.dispose();
-            UnesiEmocijuForma e = new UnesiEmocijuForma();
-            e.setVisible(true);
+            /*UnesiEmocijuForma e = new UnesiEmocijuForma();
+            e.setVisible(true);*/
+            MeniAplikacije m = new MeniAplikacije();
+            m.setVisible(true);
             
             
         } catch (Exception ex) {
