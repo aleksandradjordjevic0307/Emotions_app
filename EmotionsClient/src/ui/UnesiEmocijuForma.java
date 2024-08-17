@@ -137,10 +137,17 @@ public class UnesiEmocijuForma extends javax.swing.JFrame {
 
     private void btnSacuvajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajActionPerformed
         try {
+            
+            User u = sesija.Session.getInstance().getUlogovani();
+            ClientController.getInstance().readUser(u);
+            System.out.println("PROCITAN KORISNIK");
+            this.dispose();
+            
+            
             // TODO add your handling code here:
             //potrebno je da se povuce datum prvo
 
-            System.out.println("Stampanje datuma iz forme unesiEmociju: " + currentDate);
+            /*System.out.println("Stampanje datuma iz forme unesiEmociju: " + currentDate);
             String emotion = (String) emocija_combo_box.getSelectedItem();
             System.out.println("Stampanje unete emocije iz forme unesiEmociju: " + emotion);
             
@@ -150,7 +157,7 @@ public class UnesiEmocijuForma extends javax.swing.JFrame {
            System.out.println("Username iz UnesiEmocijuForma: " + user.getUsername());
             
             System.out.println("Odavde je citanje korisnika iz baze u unesiemociju formi:");
-            ClientController.getInstance().readUser(user);
+            ClientController.getInstance().readUser(user);*/
             
           /* Emotion e = new Emotion();
             Date datum = Date.valueOf(currentDate);

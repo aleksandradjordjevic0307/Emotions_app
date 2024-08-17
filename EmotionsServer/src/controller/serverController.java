@@ -11,6 +11,7 @@ import so.user.SOCreateUser;
 import so.emotions.SOCreateEmotion;
 import emotionstogether.Emotion;
 import so.user.SOReadUser;
+import so.user.SOUpdateUser;
 
 
 /**
@@ -50,6 +51,12 @@ public class serverController{
      
      public void addEmotion(Emotion emotion) throws Exception{
          (new SOCreateEmotion()).templateExecute(emotion);
+     }
+     
+     public void updateUser(User u) throws Exception{
+         SOUpdateUser so = new SOUpdateUser();
+         so.templateExecute(u);
+         System.out.println("Korisnik je promenjen iz serverController");
      }
     
      

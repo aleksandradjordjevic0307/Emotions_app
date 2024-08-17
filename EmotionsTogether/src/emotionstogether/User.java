@@ -18,6 +18,24 @@ public class User extends AbstractDomainObject{
     
     private String username;
     private String password;
+
+    public void setNoviUsername(String noviUsername) {
+        this.noviUsername = noviUsername;
+    }
+
+    public void setNoviPassword(String noviPassword) {
+        this.noviPassword = noviPassword;
+    }
+
+    public String getNoviUsername() {
+        return noviUsername;
+    }
+
+    public String getNoviPassword() {
+        return noviPassword;
+    }
+    private String noviUsername;
+    private String noviPassword;
     private int id;
 
     
@@ -80,7 +98,7 @@ public class User extends AbstractDomainObject{
 
     @Override
     public String uslovZaSelect() {
-        return "Username = '" + username + "'";
+        return "username = '" + username + "'";
         //AND Password = '" + password + "' "
     }
 
@@ -107,12 +125,12 @@ public class User extends AbstractDomainObject{
 
     @Override
     public String vrednostiZaUpdate() {
-         return "Username = '" + username + ", Password = '" + password + "' ";
+         return "username = '" + noviUsername + "', password = '" + noviPassword + "' ";
     }
 
     @Override
     public String uslovWhere() {
-        return "Username = '" + username + "' ";
+        return "username = '" + username + "' ";
     }
 
    

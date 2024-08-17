@@ -67,6 +67,8 @@ public class ThreadClient extends Thread{
                     break;
                 case Operation.SO_UPDATE_USER:
                     //dodaj
+                    serverController.getInstance().updateUser((User) request.getData());
+                    System.out.println("Primljeni podaci za izmenu korisnika u thread client");
                     break;
                 case Operation.SO_LOGIN:
                     User u = serverController.getInstance().login((User)request.getData());

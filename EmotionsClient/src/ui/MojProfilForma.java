@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
+import controller.ClientController;
 import emotionstogether.User;
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +25,10 @@ public class MojProfilForma extends javax.swing.JFrame {
         initComponents();
     }
     
-    //OVDE SE KUCA KOD
+     User user = sesija.Session.getInstance().getUlogovani();
+         
+     String username = user.getUsername();
+     String password = user.getPassword();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,6 +44,8 @@ public class MojProfilForma extends javax.swing.JFrame {
         password_lbl = new javax.swing.JLabel();
         username_txt_fld = new javax.swing.JTextField();
         password_txt_fld = new javax.swing.JTextField();
+        change_data_btn = new javax.swing.JButton();
+        save_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,12 +55,28 @@ public class MojProfilForma extends javax.swing.JFrame {
 
         password_lbl.setText("Lozinka:");
 
+        username_txt_fld.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         username_txt_fld.setEnabled(false);
 
+        password_txt_fld.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         password_txt_fld.setEnabled(false);
         password_txt_fld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 password_txt_fldActionPerformed(evt);
+            }
+        });
+
+        change_data_btn.setText("Promeni podatke");
+        change_data_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                change_data_btnActionPerformed(evt);
+            }
+        });
+
+        save_btn.setText("Sacuvaj izmene");
+        save_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_btnActionPerformed(evt);
             }
         });
 
@@ -69,8 +95,13 @@ public class MojProfilForma extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(password_lbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(change_data_btn)
+                                .addGap(59, 59, 59)
+                                .addComponent(save_btn))
+                            .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,23 +116,71 @@ public class MojProfilForma extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password_lbl)
                     .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(change_data_btn)
+                    .addComponent(save_btn))
+                .addGap(15, 15, 15))
         );
+
+        username_txt_fld.setText(username);
+        password_txt_fld.setText(password);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void password_txt_fldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_txt_fldActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+           
+        } catch (Exception ex) {
+            Logger.getLogger(MojProfilForma.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_password_txt_fldActionPerformed
+
+    private void change_data_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change_data_btnActionPerformed
+        // TODO add your handling code here:
+        username_txt_fld.enable(true);
+        username_txt_fld.setBackground(Color.WHITE);
+        password_txt_fld.enable(true);
+        password_txt_fld.setBackground(Color.WHITE);
+        
+        
+    }//GEN-LAST:event_change_data_btnActionPerformed
+
+    private void save_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_btnActionPerformed
+        // TODO add your handling code here:
+        User u = sesija.Session.getInstance().getUlogovani();
+        
+        String noviUsername = username_txt_fld.getText().trim();
+        String noviPassword = password_txt_fld.getText();
+        u.setNoviUsername(noviUsername);
+        u.setNoviPassword(noviPassword);
+        
+        try {
+            ClientController.getInstance().updateUser(u);
+            JOptionPane.showMessageDialog(this, "Uspesno ste izmenili podatke");
+            this.dispose();
+        } catch (Exception ex) {
+            System.out.println("Greska iz updateUser dela u moj profil formi: " + ex);
+        }
+    }//GEN-LAST:event_save_btnActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton change_data_btn;
     private javax.swing.JLabel password_lbl;
     private javax.swing.JTextField password_txt_fld;
     private javax.swing.JLabel podaci_lbl;
+    private javax.swing.JButton save_btn;
     private javax.swing.JLabel username_lbl;
     private javax.swing.JTextField username_txt_fld;
     // End of variables declaration//GEN-END:variables
+
+   
+    
 }
+
+    
