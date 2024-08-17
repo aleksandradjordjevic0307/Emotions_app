@@ -91,7 +91,7 @@ public class Broker {
 
     public void delete(AbstractDomainObject ado) throws SQLException {
         String upit = "DELETE FROM " + ado.nazivTabele() + " WHERE " + ado.uslovWhere();
-        System.out.println(upit);
+        System.out.println("Upit za delete: " + upit);
         Statement s = connection.createStatement();
         s.executeUpdate(upit);
     }

@@ -201,8 +201,18 @@ public class MojProfilForma extends javax.swing.JFrame {
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Da li ste sigurni da zelite da obrisete svoj profil?");
-        
+        int odgovor = JOptionPane.showConfirmDialog(this, "Da li ste sigurni da zelite da obrisete svoj profil?", null, JOptionPane.YES_NO_OPTION);
+        if(odgovor==0){
+            System.out.println("Izabrali ste brisanje");
+            User u = sesija.Session.getInstance().getUlogovani();
+            try {
+                ClientController.getInstance().deleteUser(u);
+                JOptionPane.showMessageDialog(this, "Uspesno ste obrisali profil");
+                this.dispose();
+            } catch (Exception ex) {
+                System.err.println("Greska prilikom brisanja korisnika iz forme moj profil: " + ex.getMessage());
+            }
+        }
         
     }//GEN-LAST:event_delete_btnActionPerformed
 

@@ -74,6 +74,7 @@ public class ClientController {
         sendRequest(Operation.SO_UPDATE_USER, user);
     }
     public void deleteUser(User user) throws Exception{
+        System.out.println("Stigao u client controller i treba da posalje zahtev za brisanje korisnika");
         sendRequest(Operation.SO_DELETE_USER, user);
     }
     

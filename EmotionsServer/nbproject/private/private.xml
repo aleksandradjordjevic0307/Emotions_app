@@ -5,8 +5,11 @@
         <group name="Emotions"/>
         <group>
             <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/so/AbstractSO.java</file>
+            <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/broker/Broker.java</file>
+            <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/so/user/SODeleteUser.java</file>
             <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/controller/serverController.java</file>
             <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/so/user/SOUpdateUser.java</file>
+            <file>file:/C:/Users/Aleksandra/NetBeans/Emotions_app/EmotionsServer/src/threads/ThreadClient.java</file>
         </group>
     </open-files>
 </project-private>

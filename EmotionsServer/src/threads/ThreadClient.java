@@ -59,6 +59,8 @@ public class ThreadClient extends Thread{
                     break;
                 case Operation.SO_DELETE_USER:
                     //dodaj
+                    serverController.getInstance().deleteUser((User) request.getData());
+                    System.out.println("Primljeni podaci za brisanje korisnika");
                     break;
                 case Operation.SO_READ_USER:
                     //dodaj

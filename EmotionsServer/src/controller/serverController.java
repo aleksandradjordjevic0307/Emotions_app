@@ -10,6 +10,7 @@ import so.login.SOLogIn;
 import so.user.SOCreateUser;
 import so.emotions.SOCreateEmotion;
 import emotionstogether.Emotion;
+import so.user.SODeleteUser;
 import so.user.SOReadUser;
 import so.user.SOUpdateUser;
 
@@ -59,5 +60,10 @@ public class serverController{
          System.out.println("Korisnik je promenjen iz serverController");
      }
     
+     public void deleteUser (User u) throws Exception{
+         SODeleteUser so = new SODeleteUser();
+         so.templateExecute(u);
+         System.out.println("Brisanje korisnika server controller");
+     }
      
 }
