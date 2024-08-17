@@ -37,6 +37,7 @@ public class RegistracijaForma extends javax.swing.JFrame {
         registracija_btn = new javax.swing.JButton();
         korisnicko_ime_txt_fld = new javax.swing.JTextField();
         password_txt_fld = new javax.swing.JTextField();
+        back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +64,13 @@ public class RegistracijaForma extends javax.swing.JFrame {
             }
         });
 
+        back_btn.setText("Nazad");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,17 +78,20 @@ public class RegistracijaForma extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(korisnicko_ime_lbl)
-                    .addComponent(password_lbl))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(korisnicko_ime_txt_fld, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                    .addComponent(password_txt_fld))
-                .addContainerGap(90, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registracija_btn)
-                .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(back_btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(registracija_btn)
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(korisnicko_ime_lbl)
+                            .addComponent(password_lbl))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(korisnicko_ime_txt_fld, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(password_txt_fld))
+                        .addContainerGap(90, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +105,9 @@ public class RegistracijaForma extends javax.swing.JFrame {
                     .addComponent(password_lbl)
                     .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(registracija_btn)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registracija_btn)
+                    .addComponent(back_btn))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -138,9 +151,17 @@ public class RegistracijaForma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_password_txt_fldActionPerformed
 
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        PocetnaFormaKlijent p = new PocetnaFormaKlijent();
+        p.setVisible(true);
+    }//GEN-LAST:event_back_btnActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_btn;
     private javax.swing.JLabel korisnicko_ime_lbl;
     private javax.swing.JTextField korisnicko_ime_txt_fld;
     private javax.swing.JLabel password_lbl;

@@ -39,7 +39,7 @@ public class MeniAplikacije extends javax.swing.JFrame {
             }
         });
 
-        pregledEmocijaBtn.setText("Pregled emocija");
+        pregledEmocijaBtn.setText("Pregled mojih emocija");
         pregledEmocijaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pregledEmocijaBtnActionPerformed(evt);
@@ -63,7 +63,7 @@ public class MeniAplikacije extends javax.swing.JFrame {
                     .addComponent(unesiEmocijuBtn)
                     .addComponent(pregledEmocijaBtn)
                     .addComponent(mojProfilBtn))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

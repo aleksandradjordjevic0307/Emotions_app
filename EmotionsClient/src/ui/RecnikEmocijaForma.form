@@ -23,14 +23,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="unesiEmocijuBtn" min="-2" max="-2" attributes="0"/>
-                  <Component id="pregledEmocijaBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="mojProfilBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="emo_vocabulary_txt_area" pref="372" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="back_btn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,39 +40,27 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="unesiEmocijuBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="pregledEmocijaBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="mojProfilBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <Component id="emo_vocabulary_txt_area" min="-2" pref="174" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="back_btn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="unesiEmocijuBtn">
+    <Component class="java.awt.TextArea" name="emo_vocabulary_txt_area">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Unesi emociju"/>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#xa;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&#xa;cccccccccccccc&#xa;dddddddd&#xa;eeeeeeeeeee&#xa;fffffffffff&#xa;ggggggggggg&#xa;hhhhhhhhhhhhh&#xa;iiiiiiiiiiiiii&#xa;jjjjjjjjjjjjj&#xa;kkkkkkkkkkk&#xa;llllllllllllllllll&#xa;"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unesiEmocijuBtnActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="pregledEmocijaBtn">
+    <Component class="javax.swing.JButton" name="back_btn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pregled mojih emocija"/>
+        <Property name="text" type="java.lang.String" value="Nazad"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pregledEmocijaBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="mojProfilBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Moj profil"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mojProfilBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="back_btnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

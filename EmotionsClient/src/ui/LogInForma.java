@@ -39,6 +39,7 @@ public class LogInForma extends javax.swing.JFrame {
         username_txt_fld = new javax.swing.JTextField();
         login_btn = new javax.swing.JButton();
         password_txt_fld = new javax.swing.JPasswordField();
+        back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(800, 300));
@@ -62,15 +63,19 @@ public class LogInForma extends javax.swing.JFrame {
             }
         });
 
+        back_btn.setText("Nazad");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(insert_lbl))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,12 +84,17 @@ public class LogInForma extends javax.swing.JFrame {
                         .addGap(86, 86, 86)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(username_txt_fld, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                            .addComponent(password_txt_fld))))
+                            .addComponent(password_txt_fld)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(back_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(login_btn)
+                                .addGap(14, 14, 14))
+                            .addComponent(insert_lbl))))
                 .addContainerGap(10, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(login_btn)
-                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +110,9 @@ public class LogInForma extends javax.swing.JFrame {
                     .addComponent(password_lbl)
                     .addComponent(password_txt_fld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(login_btn)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(login_btn)
+                    .addComponent(back_btn))
                 .addGap(16, 16, 16))
         );
 
@@ -141,9 +153,17 @@ public class LogInForma extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_login_btnActionPerformed
 
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        PocetnaFormaKlijent p = new PocetnaFormaKlijent();
+        p.setVisible(true);
+    }//GEN-LAST:event_back_btnActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_btn;
     private javax.swing.JLabel insert_lbl;
     private javax.swing.JButton login_btn;
     private javax.swing.JLabel password_lbl;

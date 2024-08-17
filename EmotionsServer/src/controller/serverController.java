@@ -52,6 +52,7 @@ public class serverController{
      
      public void addEmotion(Emotion emotion) throws Exception{
          (new SOCreateEmotion()).templateExecute(emotion);
+         System.out.println("Dodavanje emocije server controller");
      }
      
      public void updateUser(User u) throws Exception{

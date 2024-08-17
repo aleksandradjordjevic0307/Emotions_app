@@ -16,45 +16,43 @@ import java.util.Date;
  */
 public class Emotion extends AbstractDomainObject{
     
-    private Date date;
+       private Date date;
     private String emotion;
-    private int user_id;
-
-  
+    private String username;
+    
     public Emotion() {
     }
 
-    public Emotion(Date date, String emotion, int user_id) {
+    public Emotion(Date date, String emotion, String username) {
         this.date = date;
         this.emotion = emotion;
-        this.user_id = user_id;
+        this.username = username;
     }
 
-     public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-  
     public Date getDate() {
         return date;
     }
 
-    public String getEmotion() {
-        return emotion;
-    }
-    
-
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getEmotion() {
+        return emotion;
     }
 
     public void setEmotion(String emotion) {
         this.emotion = emotion;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
     
     @Override
     public String nazivTabele() {
@@ -63,14 +61,12 @@ public class Emotion extends AbstractDomainObject{
 
     @Override
     public String koloneZaInsert() {
-        return "(user_id, emotion, date)";
+        return "(emotion, date, username)";
     }
 
     @Override
     public String vrednostiZaInsert() {
-            return "'" + user_id + "'" + ", "+ "'" + emotion + "'" + ", " + "'" + date + "'";
-            
-            
+            return "'" + emotion + "'" + ", "+ "'" + date + "'" + ", " + "'" + username + "'";        
     }
 
     @Override
@@ -85,10 +81,8 @@ public class Emotion extends AbstractDomainObject{
 
     @Override
     public String uslovZaSelect() {
-       return  "User_id = '" + user_id + "'";
-               //+ "AND" + "Date='" + date + "'";
-     
-       
+       return  "Username = '" + username + "'";
+               //+ "AND" + "Date='" + date + "'";     
     }
 
     @Override
@@ -96,11 +90,10 @@ public class Emotion extends AbstractDomainObject{
         ArrayList<AbstractDomainObject> lista = new ArrayList<>();
 
         while (rs.next()) {
-            Emotion e = new Emotion(rs.getDate("date"),
-                    rs.getString("emotion"),
-                   rs.getInt("user_id"));
+            Emotion e = new Emotion(rs.getDate("emotion"),
+                    rs.getString("date"),
+                   rs.getString("username"));
                     
-
             lista.add(e);
         }
 
@@ -116,7 +109,7 @@ public class Emotion extends AbstractDomainObject{
 
     @Override
     public String uslovWhere() {
-        return "user_id = '" + user_id; 
+        return "Username = '" + username; 
     }
     
  
