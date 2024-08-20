@@ -184,6 +184,8 @@ public class UnesiEmocijuForma extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Uspesno ste uneli emociju");
             this.dispose();
+            MeniAplikacije m = new MeniAplikacije();
+            m.setVisible(true);
             
             
         } catch (Exception ex) {

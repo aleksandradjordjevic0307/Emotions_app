@@ -4,6 +4,8 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aleksandra
@@ -29,6 +31,7 @@ public class MeniAplikacije extends javax.swing.JFrame {
         unesiEmocijuBtn = new javax.swing.JButton();
         pregledEmocijaBtn = new javax.swing.JButton();
         mojProfilBtn = new javax.swing.JButton();
+        logout_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +56,13 @@ public class MeniAplikacije extends javax.swing.JFrame {
             }
         });
 
+        logout_btn.setText("Izloguj se");
+        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,7 +72,8 @@ public class MeniAplikacije extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(unesiEmocijuBtn)
                     .addComponent(pregledEmocijaBtn)
-                    .addComponent(mojProfilBtn))
+                    .addComponent(mojProfilBtn)
+                    .addComponent(logout_btn))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -74,7 +85,9 @@ public class MeniAplikacije extends javax.swing.JFrame {
                 .addComponent(pregledEmocijaBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mojProfilBtn)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logout_btn)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,8 +114,18 @@ public class MeniAplikacije extends javax.swing.JFrame {
         //proveri da li ces kao formu da prikazes ili na neki drugi nacin
     }//GEN-LAST:event_pregledEmocijaBtnActionPerformed
 
+    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
+        // TODO add your handling code here:
+        sesija.Session.getInstance().setUlogovani(null);
+        this.dispose();
+        JOptionPane.showMessageDialog(this, "Uspesno ste se izlogovali!");
+        LogInForma lf = new LogInForma();
+        lf.setVisible(true);
+    }//GEN-LAST:event_logout_btnActionPerformed
+
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton logout_btn;
     private javax.swing.JButton mojProfilBtn;
     private javax.swing.JButton pregledEmocijaBtn;
     private javax.swing.JButton unesiEmocijuBtn;
