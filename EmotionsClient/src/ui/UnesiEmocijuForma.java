@@ -71,7 +71,7 @@ public class UnesiEmocijuForma extends javax.swing.JFrame {
 
         emocija_lbl.setText("Vase osecanje");
 
-        emocija_combo_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SREĆAN", "TUŽAN" }));
+        emocija_combo_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SREĆA", "TUGA", "BES", "POVERENJE", "STRAH"}));
         emocija_combo_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emocija_combo_boxActionPerformed(evt);

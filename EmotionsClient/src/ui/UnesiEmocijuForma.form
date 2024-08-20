@@ -113,7 +113,7 @@
     <Component class="javax.swing.JComboBox" name="emocija_combo_box">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;SRE&#x106;AN&quot;, &quot;TU&#x17d;AN&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;SRE&#x106;A&quot;, &quot;TUGA&quot;, &quot;BES&quot;, &quot;POVERENJE&quot;, &quot;STRAH&quot;})" type="code"/>
         </Property>
       </Properties>
       <Events>

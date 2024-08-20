@@ -32,6 +32,7 @@ public class MeniAplikacije extends javax.swing.JFrame {
         pregledEmocijaBtn = new javax.swing.JButton();
         mojProfilBtn = new javax.swing.JButton();
         logout_btn = new javax.swing.JButton();
+        emoVocBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +64,13 @@ public class MeniAplikacije extends javax.swing.JFrame {
             }
         });
 
+        emoVocBtn.setText("Recnik emocija");
+        emoVocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emoVocBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,7 +81,8 @@ public class MeniAplikacije extends javax.swing.JFrame {
                     .addComponent(unesiEmocijuBtn)
                     .addComponent(pregledEmocijaBtn)
                     .addComponent(mojProfilBtn)
-                    .addComponent(logout_btn))
+                    .addComponent(logout_btn)
+                    .addComponent(emoVocBtn))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,11 +92,13 @@ public class MeniAplikacije extends javax.swing.JFrame {
                 .addComponent(unesiEmocijuBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pregledEmocijaBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(emoVocBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mojProfilBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logout_btn)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -123,8 +134,16 @@ public class MeniAplikacije extends javax.swing.JFrame {
         lf.setVisible(true);
     }//GEN-LAST:event_logout_btnActionPerformed
 
+    private void emoVocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emoVocBtnActionPerformed
+        // TODO add your handling code here:
+        RecnikEmocijaForma r = new RecnikEmocijaForma();
+        this.dispose();
+        r.setVisible(true);
+    }//GEN-LAST:event_emoVocBtnActionPerformed
+
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton emoVocBtn;
     private javax.swing.JButton logout_btn;
     private javax.swing.JButton mojProfilBtn;
     private javax.swing.JButton pregledEmocijaBtn;

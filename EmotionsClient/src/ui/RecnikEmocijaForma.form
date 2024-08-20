@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -26,9 +26,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="emo_vocabulary_txt_area" pref="372" max="32767" attributes="0"/>
+                  <Component id="emo_vocabulary_txt_area" pref="460" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="back_btn" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bck_menu_btn" min="-2" max="-2" attributes="0"/>
+                          <Component id="back_emo_btn" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -40,9 +43,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="emo_vocabulary_txt_area" min="-2" pref="174" max="-2" attributes="0"/>
+              <Component id="emo_vocabulary_txt_area" pref="174" max="32767" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="back_btn" min="-2" max="-2" attributes="0"/>
+              <Component id="bck_menu_btn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="back_emo_btn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -51,16 +56,28 @@
   <SubComponents>
     <Component class="java.awt.TextArea" name="emo_vocabulary_txt_area">
       <Properties>
+        <Property name="columns" type="int" value="1"/>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="text" type="java.lang.String" value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#xa;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&#xa;cccccccccccccc&#xa;dddddddd&#xa;eeeeeeeeeee&#xa;fffffffffff&#xa;ggggggggggg&#xa;hhhhhhhhhhhhh&#xa;iiiiiiiiiiiiii&#xa;jjjjjjjjjjjjj&#xa;kkkkkkkkkkk&#xa;llllllllllllllllll&#xa;"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Strah - osecanje koje subjekat oseca u situacijama u kojima procenjuje da je ugrozena neka njegova vrednost i da ne bi mogao da se adekvatno suprotstavi objektima ili situacijama koje ga ugrozavaju. &#xa;&#xa;Ljutnja (bes) - subjekt oseca ljutnju kada procenjuje da se neko neopravdano ponasa na nacin koji ugrozava neku subjektovu vrednost.&#xa;&#xa;Sreca - osecanje koje subjekt oseca kada je ostvarena neka od njegovih najvecih zelja, odnosno afirmisana neka od najvisih vrednosti.&#xa;&#xa;Tuga - subjekt oseca tugu ili zalost u situacijama u kojima procenjuje da nepovratno gubi nesto sto mu je vredno.&#xa;&#xa;Poverenje - osecanje poverenja se javlja kada je subjekt procenio drugu osobu kao dobronamernu, pouzdanu i odgovornu. &#xa;&#xa;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="back_btn">
+    <Component class="javax.swing.JButton" name="back_emo_btn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nazad"/>
+        <Property name="text" type="java.lang.String" value="Nazad na dodavanje emocije"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="back_btnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="back_emo_btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bck_menu_btn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nazad na glavni meni"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bck_menu_btnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
