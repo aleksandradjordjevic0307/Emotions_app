@@ -121,8 +121,9 @@ public class MeniAplikacije extends javax.swing.JFrame {
     }//GEN-LAST:event_mojProfilBtnActionPerformed
 
     private void pregledEmocijaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pregledEmocijaBtnActionPerformed
-        //prikaz emocija
-        //proveri da li ces kao formu da prikazes ili na neki drugi nacin
+        this.dispose();
+        EmotionTracker e = new EmotionTracker();
+        e.setVisible(true);
     }//GEN-LAST:event_pregledEmocijaBtnActionPerformed
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed

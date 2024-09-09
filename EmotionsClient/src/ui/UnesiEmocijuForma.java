@@ -198,6 +198,9 @@ public class UnesiEmocijuForma extends javax.swing.JFrame {
 
     private void btnPrikaziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrikaziActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        EmotionTracker e = new EmotionTracker();
+        e.setVisible(true);
         
     }//GEN-LAST:event_btnPrikaziActionPerformed
 
